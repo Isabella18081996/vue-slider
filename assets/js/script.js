@@ -11,7 +11,8 @@ const app = new Vue({
             'assets/img/photo_6.jpg',
             'assets/img/photo_7.jpg',
             'assets/img/photo.jpg',
-
+            'assets/img/photo_4.jpg',
+            'assets/img/photo_8.jpg',
 
         ]
 
@@ -35,9 +36,20 @@ const app = new Vue({
             if(this.counterPhoto < 0) this.counterPhoto = this.photos.length -1;
         },
 
+        doubleNextPhoto(){
+            this.counterPhoto+=2;
+            if(this.counterPhoto > this.photos.length) this.counterPhoto = 0;
+        },
+
+        doublePrevPhoto(){
+            this.counterPhoto-=2;
+            if(this.counterPhoto < 0) this.counterPhoto = this.photos.length -1;
+        },
+
+
         autoPlay(){
             setInterval(this.nextPhoto, 3000)
-          },
+          }, 
 
     }
 
